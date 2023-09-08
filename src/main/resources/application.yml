@@ -1,0 +1,21 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/bookstore-elephant
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect  # Updated to a more specific dialect for PostgreSQL 10
+        format_sql: true  # To format the SQL in logs
+      show_sql: true
+  jackson:
+    default-property-inclusion: non_null
+
+
